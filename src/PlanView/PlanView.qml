@@ -636,7 +636,7 @@ Item {
                         }
                     },
                     ToolStripAction {
-                        text:       _planMasterController.controllerVehicle.multiRotor ? qsTr("Return") : qsTr("Land")
+                        text:       _planMasterController.controllerVehicle.multiRotor ? qsTr("Return") : qsTr("Landdddd")
                         iconSource: "/res/rtl.svg"
                         enabled:    _missionController.isInsertLandValid
                         visible:    toolStrip._isMissionLayer || toolStrip._isUtmspLayer
@@ -651,6 +651,27 @@ Item {
                         enabled:            true
                         visible:            true
                         dropPanelComponent: centerMapDropPanel
+                    },
+                    ToolStripAction {
+                        text:        qsTr("Cut engine")
+                        iconSource: "/res/engineCut.svg"
+                        // enabled:    _missionController.isInsertLandValid
+                        enabled:    true
+                        visible:    toolStrip._isMissionLayer || toolStrip._isUtmspLayer
+                        onTriggered: {
+                            toolStrip.allAddClickBoolsOff()
+                            insertLandItemAfterCurrent()
+                        }
+                    },
+                    ToolStripAction {
+                        text:        qsTr("Parachute")
+                        iconSource: "/res/parachute.svg"
+                        enabled:    _missionController.isInsertLandValid
+                        visible:    toolStrip._isMissionLayer || toolStrip._isUtmspLayer
+                        onTriggered: {
+                            toolStrip.allAddClickBoolsOff()
+                            insertLandItemAfterCurrent()
+                        }
                     }
                 ]
             }
