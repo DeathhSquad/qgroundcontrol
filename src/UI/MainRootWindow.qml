@@ -314,7 +314,7 @@ ApplicationWindow {
                             id:                 analyzeButton
                             height:             toolSelectDialog._toolButtonHeight
                             Layout.fillWidth:   true
-                            text:               qsTr("Analyze Tools")
+                            text:               qsTr("Analyzeeeee Tools")
                             imageResource:      "/qmlimages/Analyze.svg"
                             imageColor:         qgcPal.text
                             visible:            QGroundControl.corePlugin.showAdvancedUI
@@ -330,7 +330,7 @@ ApplicationWindow {
                             id:                 settingsButton
                             height:             toolSelectDialog._toolButtonHeight
                             Layout.fillWidth:   true
-                            text:               qsTr("Application Settings")
+                            text:               qsTr("Applicationnnnnn Settings")
                             imageResource:      "/res/QGCLogoFull"
                             imageColor:         "transparent"
                             visible:            !QGroundControl.corePlugin.options.combineSettingsAndSetup

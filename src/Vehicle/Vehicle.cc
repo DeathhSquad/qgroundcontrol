@@ -4072,4 +4072,22 @@ void Vehicle::sendSetupSigning()
     }
 }
 
+void Vehicle::triggerEngineOff()
+{
+    if (_toolbox->multiVehicleManager()->activeVehicle())
+    {
+        int channel = 1; // Replace with your specific channel
+        int pwmValue = 1000; // Replace with the PWM value needed for "Engine Off"
+
+        // Send MAV_CMD_DO_SET_SERVO command
+        sendMavCommand(
+            // MAV_COMP_ID_AUTOPILOT1,
+            defaultComponentId(),
+            MAV_CMD_DO_SET_SERVO,
+            true,  // showError if fails
+            channel, pwmValue, 0, 0, 0, 0, 0
+            );
+    }
+}
+
 /*---------------------------------------------------------------------------*/

@@ -16,11 +16,49 @@ ToolStripActionList {
     id: _root
 
     signal displayPreFlightChecklist
+    property var    _activeVehicle:             QGroundControl.multiVehicleManager.activeVehicle
 
     model: [
         ToolStripAction {
             text:           qsTr("Plan")
             iconSource:     "/qmlimages/Plan.svg"
+            onTriggered:{
+                mainWindow.showPlanView()
+                viewer3DWindow.close()
+            }
+        },
+        ToolStripAction {
+            text:           qsTr("Cut engine")
+            iconSource:     "/res/engineCut.svg"
+            // enabled:        QGroundControl.activeVehicle && QGroundControl.activeVehicle.linkManager.activeLinkConnected
+            enabled: true
+            onTriggered:{
+                console.log("Button clicked");
+                _activeVehicle.triggerEngineOff()
+                   // if (QGroundControl) {
+                   //     console.log("QGroundControl object is available");
+                   // } else {
+                   //     console.log("QGroundControl object is NOT available");
+                   // }
+
+                   // if (QGroundControl.activeVehicle) {
+                   //     console.log("Active vehicle is available");
+                   // } else {
+                   //     console.log("Active vehicle is NOT available");
+                   // }
+
+                   // if (QGroundControl.activeVehicle && QGroundControl.activeVehicle.linkManager.activeLinkConnected) {
+                   //     console.log("Vehicle is connected");
+                   //     QGroundControl.activeVehicle.triggerEngineOff();
+                   // } else {
+                   //     console.log("No active vehicle or vehicle not connected.");
+                   // }
+            }
+        },
+        ToolStripAction {
+            text:           qsTr("Parachute")
+            iconSource:     "/res/parachute.svg"
+            enabled:    false
             onTriggered:{
                 mainWindow.showPlanView()
                 viewer3DWindow.close()

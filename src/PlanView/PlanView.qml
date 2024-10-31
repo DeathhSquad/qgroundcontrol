@@ -656,7 +656,7 @@ Item {
                         text:        qsTr("Cut engine")
                         iconSource: "/res/engineCut.svg"
                         // enabled:    _missionController.isInsertLandValid
-                        enabled:    true
+                        enabled:    false
                         visible:    toolStrip._isMissionLayer || toolStrip._isUtmspLayer
                         onTriggered: {
                             toolStrip.allAddClickBoolsOff()

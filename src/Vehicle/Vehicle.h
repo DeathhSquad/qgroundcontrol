@@ -418,6 +418,8 @@ public:
 
     Q_INVOKABLE void sendSetupSigning();
 
+    Q_INVOKABLE void triggerEngineOff();
+
     bool    isInitialConnectComplete() const;
     bool    guidedModeSupported     () const;
     bool    pauseVehicleSupported   () const;
